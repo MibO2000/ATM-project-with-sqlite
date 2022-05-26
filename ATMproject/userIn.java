@@ -120,6 +120,7 @@ public class userIn {
 				line();
 				break;
 			case 'f':
+				scanner.close();
 				break;
 			default:
 				line();
