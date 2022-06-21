@@ -130,6 +130,7 @@ public class userIn {
 		}while(option != 'f');
 		line();
 		System.out.println("Thank you for Banking with us!");
+		line();
 	}
 
 	

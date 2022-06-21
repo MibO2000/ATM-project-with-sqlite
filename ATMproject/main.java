@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class main {
 
-	public static void main(String[] args) throws SQLException {
+	public static void main(String[] args) {
 		sqliteDB sql = new sqliteDB();
 		userIn userin = new userIn();
 		try (Scanner scan = new Scanner(System.in)) {
@@ -50,20 +50,23 @@ public class main {
 					sql.close();
 					break;
 				}
-				else {
-					System.out.println("Enter the valid option!");
-				}
 			}
 			userin.showMenu(username);
 		} catch (NumberFormatException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 	public static boolean check(Object a) {
 		try {
-		    int x;
-		    x = Integer.valueOf((String) a);
-		    return true;
+		    int x = Integer.valueOf((String) a);
+			System.out.println(x);
+			if (x == 1 || x == 2){
+				return true;
+			}
+			System.out.println("Your input is invalid, please try again");
+		    return false;
 		} catch(Exception e){
 		    System.out.println("Your input is invalid, please try again");
 		    return false;
